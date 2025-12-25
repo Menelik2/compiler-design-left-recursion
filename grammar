@@ -1,0 +1,8 @@
+📄grammar/original_grammar
+E → E + T | T
+T → id
+
+📄 grammar/transformed_grammar
+E  → T E'
+E' → + T E' | ε
+T  → id
