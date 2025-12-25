@@ -18,4 +18,26 @@ This repository explains **left recursion**, why it must be removed for **top-do
 Left recursion occurs when a non-terminal symbol appears as the leftmost symbol in its own production.
 
 Example:
+E → E + T | T
+Top-down parsers such as **Recursive Descent** and **LL(1)** cannot handle left recursion because it causes **infinite recursion**.
 
+## 🔄 Grammar Transformation
+Original grammar:
+E → E + T | T
+
+
+After removing left recursion:
+E → T E'
+E' → + T E' | ε
+
+
+## 💻 Implementation
+The `src/` folder contains:
+- Tokenizer for arithmetic expressions
+- LL(1) parser implementation
+- Main driver program
+
+## ▶️ How to Run
+```bash
+g++ src/*.cpp -o parser
+./parser
