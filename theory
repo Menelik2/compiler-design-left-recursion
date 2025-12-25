@@ -11,8 +11,7 @@ A → Aα | β
 ## Example
 E → E + T | T
 
-shell
-Copy code
+
 
 ## Types of Left Recursion
 ### 1. Direct Left Recursion
